@@ -1,2 +1,5 @@
 # IT-Academy
 It's my second changes.
+
+Git allows and encourages you to have multiple local branches that can be entirely independent of each other. The creation, merging, and deletion of those lines of development takes seconds.
+

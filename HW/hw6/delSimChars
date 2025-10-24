@@ -1,0 +1,7 @@
+// удалить из массива все повторяющиеся элементы
+
+const arr = ["ad", "ad", "as", "as", "3", "3", 7, 7, 89, 45, 45, 89];
+
+const uniq = new Set(arr);
+const result = Array.from(uniq);
+console.log(result);

@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "hw": "node hw.js"
+    "hw3": "node hw3.js"
   },
   "keywords": [],
   "author": "",

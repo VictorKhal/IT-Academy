@@ -1,5 +1,4 @@
-// записать в массив ряд фибоначчи начиная с N члена с длинной массива M
-  
+console.log("Task 3");
 
 function fibonachi(n, m) {
     let fib1 = 0;

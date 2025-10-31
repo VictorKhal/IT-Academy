@@ -29,7 +29,3 @@ function rollTheDice (numOfPlayers, numOfRolls) {
 }
 
 rollTheDice(5, 5);
-
-
-
-

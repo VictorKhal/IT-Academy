@@ -1,4 +1,4 @@
-function cutNumber(number, cutNum) {
+function cutNumber(number, cutNum, ) {
     console.log(`Разделяем число ${number} на ${cutNum} части(ей) с двумя знаками после запятой.`);
 
     if (cutNum < 1)
@@ -39,7 +39,7 @@ function cutNumber(number, cutNum) {
     console.log(parts);
 
     const sumOfFinalArray = parts.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-    console.log(`Сумма чисел массива равна: ${sumOfFinalArray}`); // почему-то иногда не правильно считает
+    console.log(`Сумма чисел массива равна: ${sumOfFinalArray}`); // почему-то иногда не правильно считает (хотя в массиве правильные числа)
 
     return parts;
 }

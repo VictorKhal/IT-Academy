@@ -35,7 +35,7 @@ const cars = [
 ]
 
 function compareUser(a, b) {
-  return a.user === b.user;
+    return a.user === b.user;
 }
 
 function getLastUnique(cars, compare) {
@@ -47,7 +47,7 @@ function getLastUnique(cars, compare) {
         const exists = result.some(value => compare(value, current));
 
         if (!exists) {
-        result.push(current);
+            result.push(current);
         }
     }
     const finalResult =result.reverse();

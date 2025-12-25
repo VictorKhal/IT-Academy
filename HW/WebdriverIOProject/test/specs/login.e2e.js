@@ -19,7 +19,7 @@ describe('Login with valid credentials', async function() {
     it('should open dashboard page after login', async () => {
         await basePage.navigate();
         await LoginPage.login(CREDENTIALS.validCredentials.login, CREDENTIALS.validCredentials.password);
-        // await browser.pause(5000);
+        await browser.pause(5000);
         console.log(DashboardPage.dashboardTitle);
         await expect(DashboardPage.dashboardTitle).toHaveText(TITLE_DASHBOARD);
     })

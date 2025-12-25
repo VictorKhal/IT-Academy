@@ -1,5 +1,5 @@
 import { $ } from '@wdio/globals'
-import Base from '../base.js';
+import Base from '../base.page.js';
 
 class MainMenu extends Base {
     get adminItem() {
@@ -26,7 +26,7 @@ class MainMenu extends Base {
         return $('div.oxd-sidepanel-body > ul > li:nth-child(6) > a');
     }
 
-    get perfomanceItem() {
+    get performanceItem() {
         return $('div.oxd-sidepanel-body > ul > li:nth-child(7) > a');
     }
 

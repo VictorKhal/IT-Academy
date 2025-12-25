@@ -1,8 +1,11 @@
 import { $ } from '@wdio/globals'
 import BasePage from './base.page';
+import { CREDENTIALS } from '../../helpers/const';
 
 
 class LoginPage extends BasePage {
+    loginForSystem = CREDENTIALS.validCredentials.login;
+    passwordForSystem = CREDENTIALS.validCredentials.password;
    
     get loginField () {
         return $('input[name="username"]');
@@ -17,16 +20,17 @@ class LoginPage extends BasePage {
     }
 
     get wrongCredentialNotification() {
-        return $('div.oxd-alert-content.oxd-alert-content--error > p')
+        return $('div.oxd-alert-content.oxd-alert-content--error > p');
     }
 
 
     async fillCredentials(username, password) {
-        if(username) {
+        if (username) {
             await this.loginField.waitForDisplayed();
             await this.loginField.setValue(username);
         }
-        if(password) {
+
+        if (password) {
             await this.passwordField.waitForDisplayed();
             await this.passwordField.setValue(password);
         }
@@ -37,16 +41,10 @@ class LoginPage extends BasePage {
         await this.buttonSubmit.click();
     }
 
-    async goToLoginPage() {
-        if(await (await browser.getWindowSize()).width < 1000) {
-            await this.openRightMenuButton.waitForClickable();
-            await this.openRightMenuButton.click();
-            await this.rightMenuEnterButton.waitForClickable();
-            await this.rightMenuEnterButton.click();
-        } else {
-            await this.enterButton.click();
-        }
+    async validLogin() {
+        await this.login(this.loginForSystem, this.passwordForSystem);
     }
+
 }
 
 export default new LoginPage();

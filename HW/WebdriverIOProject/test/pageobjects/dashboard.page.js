@@ -6,14 +6,12 @@ class DashboardPage extends BasePage {
         return $('div.oxd-topbar-header-title > span > h6:nth-child(1)');
     }
     
-
     async isOpened() {
         return this.dashboardTitle.isDisplayed();
     }
 
     async adminItem() {
         await MainMenu.adminItem.click();
-        // await this.click(this.adminMenu);
     }
 
     async pimItem() {

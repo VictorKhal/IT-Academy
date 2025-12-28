@@ -1,32 +1,26 @@
-import { browser, expect } from '@wdio/globals';
-import BasePage from '../pageobjects/base.page.js';``
+import { expect } from '@wdio/globals';
+import BasePage from '../pageobjects/base.page.js';
 import LoginPage from '../pageobjects/login.page.js';
-import DashboardPage from '../pageobjects/dashboard.page.js'
-// import AdminPage from '../pageobjects/admin.page.js'
+import DashboardPage from '../pageobjects/dashboard.page.js';
 import { TITLE_DASHBOARD, TITLE_ADMIN, TITLE_PIM, TITLE_LEAVE, TITLE_TIME, TITLE_RECRUITMENT, TITLE_MY_INFO, TITLE_PERFORMANCE, TITLE_DIRECTORY, TITLE_CLAIM, TITLE_BUZZ } from '../../helpers/const.js';
 
 const basePage = new BasePage ();
 
-describe('Dashboard functionality', () => {
+describe('Check main menu pages', () => {
     it('Navigate to Admin page', async () => {
-
         await basePage.navigate();
         await LoginPage.validLogin();
         await DashboardPage.adminItem();
         await expect(DashboardPage.dashboardTitle).toHaveText(TITLE_ADMIN);
-        // await browser.pause(250); // без паузы не проходит
-        // expect(await AdminPage.isOpened()).toBe(true);
     })
 
     it('Navigate to PIM page', async () => {
         await DashboardPage.pimItem();
-        // browser.pause(10000);
         await expect(DashboardPage.dashboardTitle).toHaveText(TITLE_PIM);
     })
 
     it('Navigate to Leave page', async () => {
         await DashboardPage.leaveItem();
-        // browser.pause(10000);
         await expect(DashboardPage.dashboardTitle).toHaveText(TITLE_LEAVE);
     })
 
@@ -69,9 +63,4 @@ describe('Dashboard functionality', () => {
         await DashboardPage.buzzItem();
         await expect(DashboardPage.dashboardTitle).toHaveText(TITLE_BUZZ);
     })
-
-    // it('Admin Add button exists', async () => {
-    //     const AdminPage = require('../pageobjects/component/admin.page.js')
-    //     expect(await AdminPage.addBtn.isDisplayed()).toBe(true)
-    // })
 })
